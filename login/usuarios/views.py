@@ -40,8 +40,10 @@ def login (request):
         else:
             return HttpResponse('e-mail ou senha invalidos!')
 
+
 @login_required(login_url="/auth/login/")       
 def plataforma(request):
-    return HttpResponse('Plataforna')
+    if request.method == "GET":
+        return render(request, 'plataforma.html')
 
 
