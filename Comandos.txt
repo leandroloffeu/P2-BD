@@ -1,4 +1,2 @@
 Startar o serviço fastapi: uvicorn main:app
- uvicorn main:app --host 127.0.0.2 --port 8080
-
 Startar o serviço django: python manage.py runserver 7000
