@@ -1,0 +1,25 @@
+create database empresa;
+
+use empresa;
+
+create table setor(
+id int auto_increment primary key,
+nome varchar(50) not null
+);
+
+create table funcionario(
+id int auto_increment primary key,
+primeiro_nome varchar(50) not null,
+sobrenome varchar(50) not null,
+data_admissao date,
+status_funcionario bool not null,
+id_setor int,
+foreign key (id_setor) references setor(id)
+);
+
+create table cargo(
+id int auto_increment primary key,
+id_setor int,
+nome varchar(50),
+foreign key (id_setor) references setor(id)
+);

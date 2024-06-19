@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/style2.css">
+        <title>Funcionário</title>
+    </head>
+<body>
+    <form method="POST">
+        <label for="primeiro_nome">Primeiro Nome:</label>
+        <input type="text" id="primeiro_nome" name="primeiro_nome" required><br><br>
+        
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" id="sobrenome" name="sobrenome" required><br><br>
+        
+        <label for="data_admissao">Data de Admissão:</label>
+        <input type="date" id="data_admissao" name="data_admissao" required><br><br>
+        
+        <label for="status_funcionario">Status do Funcionário:</label>
+        <select id="status_funcionario" name="status_funcionario" required>
+            <option value=""></option>
+            <option value="1">Ativo</option>
+            <option value="0">Inativo</option>
+        </select><br><br>
+                
+        <label for="id_setor">Setor:</label>
+<select id="id_setor" name="id_setor" required>
+    {% for setor in setores %}
+        <option value="{{ setor.id_setor }}">{{ setor.nome }}</option>
+    {% endfor %}
+</select><br><br>
+
+<label for="id_cargo">Cargo:</label>
+<select id="id_cargo" name="id_cargo" required>
+    {% for cargo in cargos %}
+        <option value="{{ cargo.id_cargo }}">{{ cargo.nome }}</option>
+    {% endfor %}
+</select><br><br>
+        
+        <input type="submit" value="Cadastrar">
+        
+    </form>
+    
+    <form action="../templates/index.html"> 
+        <a type="but" class="btn" href="/voltar" >Voltar Tela principal</a>
+    </form>
+    
+</body>
+</html>

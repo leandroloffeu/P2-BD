@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Visualizar Funcionários</title>
+</head>
+<body>
+    <h1>Funcionários Cadastrados</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Primeiro Nome</th>
+            <th>Sobrenome</th>
+            <th>Data de Admissão</th>
+            <th>Status</th>
+            <th>Setor</th>
+            <th>Ações</th>
+        </tr>
+        {% for funcionario in funcionarios %}
+            <tr>
+                <td>{{ funcionario._id_funcionario }}</td>
+                <td>{{ funcionario.primeiro_nome }}</td>
+                <td>{{ funcionario.sobrenome }}</td>
+                <td>{{ funcionario.data_admissao }}</td>
+                <td>{{ "Ativo" if funcionario.status_funcionario else "Inativo" }}</td>
+                <td>{{ funcionario.setor.nome }}</td>
+                <td>
+                    <form action="{{ url_for('excluir_funcionario', id_funcionario=funcionario.id_funcionario) }}" method="POST">
+                        <input type="submit" value="Excluir">
+                    </form>
+                </td>   
+            </tr>
+        {% endfor %}
+    </table>
+    <form action="../templates/index.html">    
+
+        <a type="but" class="btn" href="/voltar" >Voltar Tela principal</a>
+    </form>
+</body>
+</html>
