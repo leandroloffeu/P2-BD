@@ -5,39 +5,37 @@ body {
     padding: 0;
 }
 
-form {
-    width: 50%;
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+table {
+    width: 80%;
     margin: 50px auto;
+    border-collapse: collapse;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-input[type="text"] {
-    width: calc(100% - 20px);
+th, td {
     padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
 }
 
-input[type="submit"] {
-    padding: 10px 20px;
+th {
     background-color: #333;
     color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-input[type="submit"]:hover {
-    background-color: #555;
+tr:hover {
+    background-color: #f4f4f4;
+}
+
+form {
+    text-align: center;
+    margin-top: 30px;
 }
 
 .btn {

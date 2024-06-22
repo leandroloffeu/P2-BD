@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:12345678@127.0.0.1/empresa'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456789@127.0.0.1/empresa'
 db = SQLAlchemy(app)
 
 class Setor(db.Model):
