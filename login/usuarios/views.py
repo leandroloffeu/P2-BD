@@ -16,19 +16,21 @@ def cadastro(request):
         user = User.objects.filter(username=username).first()
         
         if user:
-            return HttpResponse('Já existe um usuário com esse username')    
+            #return HttpResponse('Já existe um usuário com esse username')  
+             return render(request,'existeusuario.html')  
         
         user = User.objects.create_user(username=username, email=email, password=senha)
         user.save()
-
         
-        return HttpResponse('Usuário cadastrado!')
+        #return HttpResponse('Usuário cadastrado!')
+        return render(request,'usuariocadastrado.html')
         
 def login (request):
     if request.method == "GET":
         return render(request, 'login.html')
     else:
         username = request.POST.get('username')
+        
         senha = request.POST.get('senha')
 
         user = authenticate(username=username, password=senha)
@@ -36,9 +38,12 @@ def login (request):
         if user:
             login_django(request, user)
 
-            return HttpResponse('Autenticado!')
+            #return HttpResponse('Autenticado!')
+            return render(request,'loginautenticado.html')  
         else:
-            return HttpResponse('e-mail ou senha invalidos!')
+            
+            #return HttpResponse('usuario ou senha invalidos!')
+            return render(request,'logininvalido.html') 
 
 
 @login_required(login_url="/auth/login/")       

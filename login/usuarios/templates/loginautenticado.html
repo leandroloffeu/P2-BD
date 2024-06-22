@@ -1,0 +1,28 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css3.css' %}">
+</head>
+    
+<body>
+    <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+        <h1>LOGIN AUTENTICADO!</h1>
+        <button type="button" onclick="voltar()">MENU INICIAL</button>
+        <br>
+        <br>
+    </form>
+
+    <script>
+        function voltar() {
+            // Fechar o formulário
+            document.querySelector('form').style.display = 'none';
+            // Abrir a nova URL
+            window.location.href = 'http://127.0.0.1:7000/auth/plataforma/';
+        }
+    </script>
+</body>    
+
+</html>
