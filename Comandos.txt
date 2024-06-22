@@ -1,2 +1,11 @@
-Startar o serviço fastapi: uvicorn main:app
 Startar o serviço django: python manage.py runserver 7000
+
+
+Startar o serviço fastapi: uvicorn main:app
+
+
+Startar o redis:
+Iniciar o Servidor Redis: sudo service redis-server start
+Verificar a Instalação: redis-cli
+No prompt do Redis, digite ping. Se receber “PONG” como resposta, o Redis está funcionando corretamente.
+
