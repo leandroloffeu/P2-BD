@@ -13,13 +13,25 @@ nome varchar(50)
 );
 
 create table funcionario(
-id int auto_increment primary key,
+id_funcionario int auto_increment primary key,
 primeiro_nome varchar(50) not null,
 sobrenome varchar(50) not null,
 data_admissao date,
 status_funcionario bool not null,
 id_setor int,
-foreign key (id_setor) references setor(id),
+foreign key (id_setor) references setor(id_setor),
 id_cargo int,
-foreign key (id_cargo) references cargo(id)
+foreign key (id_cargo) references cargo(id_cargo)
 );
+
+
+
+
+
+
+
+
+
+
+
+
