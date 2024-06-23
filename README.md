@@ -6,3 +6,5 @@
 ### Professor: Fabicio
 
 Prova P2 - Entrega 24/06 - 19h está marcado(a) para esta data
+
+## Link do vídeo: https://youtu.be/R3sorvEGzhg
